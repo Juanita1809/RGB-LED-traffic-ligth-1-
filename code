@@ -1,0 +1,22 @@
+from gpiozero import LED
+import time
+
+red_LED = LED(5)
+green_LED = LED(13)
+blue_LED = LED (21)
+lights = [red_LED, green_LED, blue_LED]
+
+def stopLight(a):
+    for i in a:
+        if a[i] == 1:
+            lights[i].on()
+            time.sleep(1)
+            lights[1].off()
+            time.sleep(1)
+
+
+def main():
+    traffic_light_ = {'red_LED_' : 1,'blue_LED_' : 1,'green_LED_' : 1}
+    print(traffic_light_)
+    stopLight(traffic_light_) 
+
